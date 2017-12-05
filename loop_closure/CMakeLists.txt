@@ -9,6 +9,11 @@ find_package(Ceres REQUIRED)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(loop_closure main.cpp fileIO.cpp fileIO.h Tracking.cpp Tracking.h Database.cpp Database.h)
+add_executable(test_loop_closure fileIO.cpp fileIO.h Tracking.cpp Tracking.h Database.cpp Database.h test.cpp)
 target_link_libraries(loop_closure ${OpenCV_LIBS})
 target_link_libraries(loop_closure ${DBoW3_LIBS})
 target_link_libraries(loop_closure ${Ceres_LIBS})
+
+target_link_libraries(test_loop_closure ${OpenCV_LIBS})
+target_link_libraries(test_loop_closure ${DBoW3_LIBS})
+target_link_libraries(test_loop_closure ${Ceres_LIBS})

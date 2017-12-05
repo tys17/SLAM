@@ -37,6 +37,58 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="test_loop_closure">
+				<Option output="/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/test_loop_closure" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jianwei/code/SLAM/loop_closure/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/root/anaconda3/include/opencv"/>
+					<Add directory="/root/anaconda3/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_loop_closure"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_loop_closure/fast">
+				<Option output="/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/test_loop_closure" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jianwei/code/SLAM/loop_closure/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/root/anaconda3/include/opencv"/>
+					<Add directory="/root/anaconda3/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_loop_closure/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="loop_closure">
 				<Option output="/home/jianwei/code/SLAM/loop_closure/cmake-build-debug/loop_closure" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/jianwei/code/SLAM/loop_closure/cmake-build-debug"/>
@@ -91,25 +143,34 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/Database.cpp">
+			<Option target="test_loop_closure"/>
 			<Option target="loop_closure"/>
 		</Unit>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/Database.h">
+			<Option target="test_loop_closure"/>
 			<Option target="loop_closure"/>
 		</Unit>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/Tracking.cpp">
+			<Option target="test_loop_closure"/>
 			<Option target="loop_closure"/>
 		</Unit>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/Tracking.h">
+			<Option target="test_loop_closure"/>
 			<Option target="loop_closure"/>
 		</Unit>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/fileIO.cpp">
+			<Option target="test_loop_closure"/>
 			<Option target="loop_closure"/>
 		</Unit>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/fileIO.h">
+			<Option target="test_loop_closure"/>
 			<Option target="loop_closure"/>
 		</Unit>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/main.cpp">
 			<Option target="loop_closure"/>
+		</Unit>
+		<Unit filename="/home/jianwei/code/SLAM/loop_closure/test.cpp">
+			<Option target="test_loop_closure"/>
 		</Unit>
 		<Unit filename="/home/jianwei/code/SLAM/loop_closure/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

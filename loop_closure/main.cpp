@@ -94,7 +94,13 @@ int main() {
     Curpos.at<double>(2, 0) = 1.4779;
 
     //Initialization For Iphone
-
+    /*CurOrientation.at<double>(0, 0) = 1;
+    CurOrientation.at<double>(1, 0) = 0;
+    CurOrientation.at<double>(2, 0) = 0;
+    CurOrientation.at<double>(3, 0) = 0;
+    Curpos.at<double>(0, 0) = 0;
+    Curpos.at<double>(1, 0) = 0;
+    Curpos.at<double>(2, 0) = 0;*/
 
     CurR = tracker.QuaternionToMatrix(CurOrientation).t();
     CurT = -1 * CurR*Curpos;
@@ -152,7 +158,7 @@ int main() {
             BenchMarkPoints.resize(PrePoints.size());
             copy(PrePoints.begin(), PrePoints.end(), BenchMarkPoints.begin());
             BenchMarkFlag = 0;
-            cout << i << endl;
+            //cout << i << endl;
         }
 
 
@@ -186,7 +192,8 @@ int main() {
         CurOrientation.copyTo(PreOrientation);
         CurR.copyTo(PreR);
         CurT.copyTo(PreT);
-        recoverPose(E, PrePoints, CurPoints, TemptR, TemptT, focal);
+        Point2d tmp(K.at<double>(0, 2), K.at<double>(1, 2));
+        recoverPose(E, PrePoints, CurPoints, TemptR, TemptT, focal, tmp);
         //If the outputs are the orientation and the position.
 
 
@@ -235,6 +242,7 @@ int main() {
         int startID = db.detectLoop(keyframe);
         if (startID != -1){
             // loop detected
+            cout << debug_LoopCount << ": " << startID << " and " << CurFrameID << endl;
             debug_LoopCount++;
         }
 

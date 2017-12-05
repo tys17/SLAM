@@ -79,12 +79,16 @@ public:
     DBoW3::Database DBoWdatabase;
     std::vector <KeyFrame> frame_list;;
     std::vector<Feature> feature_list;
+    FlannBasedMatcher matcher;
     // loop closure parameters
     // to be modified
-    int neighborNum = 20;
+    int neighborNum = 10;
     double thres = 0.9;
     int minimumTimeInterval = 100;
-    int minimumIDInterval = 10;
+    int minimumIDInterval = 20;
+    int minimumGoodMatches = 100;
+    //double goodMatchFactor = 2;
+    double goodMatchDist = 300;
     bool BAOnce = true;
 
     void AddFrame(KeyFrame add_frame)
@@ -100,6 +104,7 @@ public:
     bool addKeyframe(KeyFrame frame);
     DBoW3::QueryResults queryKNN(KeyFrame& frame, int k);
     int detectLoop(KeyFrame& frame);
+    vector<DMatch> computeGoodMatches(KeyFrame& frame1, KeyFrame& frame2);
 };
 //class Keyframe_DB
 //{

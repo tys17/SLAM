@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_loop_closure
+
+# Build rule for target.
+test_loop_closure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_loop_closure
+.PHONY : test_loop_closure
+
+# fast build rule for target.
+test_loop_closure/fast:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/build
+.PHONY : test_loop_closure/fast
+
+#=============================================================================
 # Target rules for targets named loop_closure
 
 # Build rule for target.
@@ -129,6 +142,7 @@ Database.o: Database.cpp.o
 
 # target to build an object file
 Database.cpp.o:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/Database.cpp.o
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/Database.cpp.o
 .PHONY : Database.cpp.o
 
@@ -138,6 +152,7 @@ Database.i: Database.cpp.i
 
 # target to preprocess a source file
 Database.cpp.i:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/Database.cpp.i
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/Database.cpp.i
 .PHONY : Database.cpp.i
 
@@ -147,6 +162,7 @@ Database.s: Database.cpp.s
 
 # target to generate assembly for a file
 Database.cpp.s:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/Database.cpp.s
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/Database.cpp.s
 .PHONY : Database.cpp.s
 
@@ -156,6 +172,7 @@ Tracking.o: Tracking.cpp.o
 
 # target to build an object file
 Tracking.cpp.o:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/Tracking.cpp.o
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/Tracking.cpp.o
 .PHONY : Tracking.cpp.o
 
@@ -165,6 +182,7 @@ Tracking.i: Tracking.cpp.i
 
 # target to preprocess a source file
 Tracking.cpp.i:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/Tracking.cpp.i
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/Tracking.cpp.i
 .PHONY : Tracking.cpp.i
 
@@ -174,6 +192,7 @@ Tracking.s: Tracking.cpp.s
 
 # target to generate assembly for a file
 Tracking.cpp.s:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/Tracking.cpp.s
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/Tracking.cpp.s
 .PHONY : Tracking.cpp.s
 
@@ -183,6 +202,7 @@ fileIO.o: fileIO.cpp.o
 
 # target to build an object file
 fileIO.cpp.o:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/fileIO.cpp.o
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/fileIO.cpp.o
 .PHONY : fileIO.cpp.o
 
@@ -192,6 +212,7 @@ fileIO.i: fileIO.cpp.i
 
 # target to preprocess a source file
 fileIO.cpp.i:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/fileIO.cpp.i
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/fileIO.cpp.i
 .PHONY : fileIO.cpp.i
 
@@ -201,6 +222,7 @@ fileIO.s: fileIO.cpp.s
 
 # target to generate assembly for a file
 fileIO.cpp.s:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/fileIO.cpp.s
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/fileIO.cpp.s
 .PHONY : fileIO.cpp.s
 
@@ -231,6 +253,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/loop_closure.dir/build.make CMakeFiles/loop_closure.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/test_loop_closure.dir/build.make CMakeFiles/test_loop_closure.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -239,6 +288,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test_loop_closure"
 	@echo "... loop_closure"
 	@echo "... Database.o"
 	@echo "... Database.i"
@@ -252,6 +302,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
